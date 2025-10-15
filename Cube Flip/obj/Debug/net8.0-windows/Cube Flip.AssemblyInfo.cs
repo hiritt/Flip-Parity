@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cube Flip")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+420592d897a7a8e5852f3e0f43ac798e5dd48cb8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cube Flip")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cube Flip")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

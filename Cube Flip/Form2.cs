@@ -19,7 +19,14 @@ namespace Cube_Flip
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void playbutton_Click(object sender, EventArgs e)
+        {
             Form form = new Form1();
+            playbutton.Visible = false;
+            Opacity = 0;
             form.Show();
         }
     }
