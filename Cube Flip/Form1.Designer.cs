@@ -2,7 +2,7 @@
 
 namespace Cube_Flip
 {
-    partial class Form1
+    partial class CubeFlip
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,7 +30,7 @@ namespace Cube_Flip
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CubeFlip));
             label1 = new Label();
             playbutton = new Button();
             Htp = new Button();
@@ -347,7 +347,7 @@ namespace Cube_Flip
             button3.MouseEnter += button3_MouseEnter;
             button3.MouseLeave += button3_MouseLeave;
             // 
-            // Form1
+            // CubeFlip
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -364,7 +364,7 @@ namespace Cube_Flip
             Controls.Add(pictureBox7);
             Controls.Add(button3);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "CubeFlip";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
             Load += Form1_Load;

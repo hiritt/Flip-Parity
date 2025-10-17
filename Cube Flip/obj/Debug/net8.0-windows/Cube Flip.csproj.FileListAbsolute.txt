@@ -3,7 +3,6 @@ C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\bin\Debug\net8.0-windows\Cub
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.runtimeconfig.json
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.dll
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.pdb
-C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.Form1.resources
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.csproj.GenerateResource.cache
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.AssemblyInfoInputs.cache
@@ -16,12 +15,13 @@ C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\Cub
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\ref\Cube Flip.dll
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.Properties.Resources.resources
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.Form2.resources
+C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.CubeFlip.resources
 C:\Users\hirit\OneDrive\Desktop\cubflip\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.exe
 C:\Users\hirit\OneDrive\Desktop\cubflip\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.deps.json
 C:\Users\hirit\OneDrive\Desktop\cubflip\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.runtimeconfig.json
 C:\Users\hirit\OneDrive\Desktop\cubflip\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.dll
 C:\Users\hirit\OneDrive\Desktop\cubflip\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.pdb
-C:\Users\hirit\OneDrive\Desktop\cubflip\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.Form1.resources
+C:\Users\hirit\OneDrive\Desktop\cubflip\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.CubeFlip.resources
 C:\Users\hirit\OneDrive\Desktop\cubflip\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.Form2.resources
 C:\Users\hirit\OneDrive\Desktop\cubflip\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.Properties.Resources.resources
 C:\Users\hirit\OneDrive\Desktop\cubflip\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.csproj.GenerateResource.cache

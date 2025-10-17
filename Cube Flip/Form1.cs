@@ -4,7 +4,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace Cube_Flip
 {
-    public partial class Form1 : Form
+    public partial class CubeFlip : Form
     {
         StreamReader cin = new StreamReader("Scores.dtx");
         System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
@@ -64,7 +64,7 @@ namespace Cube_Flip
                 }
             }
         }
-        public Form1()
+        public CubeFlip()
         {
             InitializeComponent();
             ezlv = int.Parse(cin.ReadLine());
