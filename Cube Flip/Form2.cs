@@ -21,6 +21,7 @@ namespace Cube_Flip
         public Form2()
         {
             InitializeComponent();
+            this.Text = "Log In";
             StreamReader sr = new StreamReader("data.dtx");
             n = int.Parse(sr.ReadLine());
             client = new User[n + 1];
@@ -106,7 +107,7 @@ namespace Cube_Flip
             {
                 if (username.Text == client[i].username && hash == client[i].password)
                 {
-                    StreamWriter sw = new StreamWriter("currentuser.dtx");
+                    StreamWriter sw = new StreamWriter("curentuser.dtx");
                     sw.WriteLine(username.Text);
                     sw.Close();
                     Form form = new CubeFlip();
@@ -184,11 +185,6 @@ namespace Cube_Flip
         private void aaml(object sender, EventArgs e)
         {
             AlrdAcc.ForeColor = Color.WhiteSmoke;
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

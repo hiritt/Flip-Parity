@@ -6,23 +6,29 @@ namespace Cube_Flip
 {
     public partial class CubeFlip : Form
     {
-        StreamReader cin = new StreamReader("Scores.dtx");
         System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
         int ezlv = 0, hdlv = 0;
-        int[] nl, hl;
-        /// <summary>
-        /// MODIFICA MARIMEA LABEL 1 LA 1920X1080
-        /// </summary>
-        /// 
-
+        public struct leader
+        {
+            public string username;
+            public int time;
+        }
+        leader[] eazylevel, hardlevel;
+        public struct curent
+        {
+            public string username;
+            public int eazytime, hardtime;
+            public int eazyposition, hardposition;
+        }
+        curent curentuser;
         Label[] l, h;
         void leaderboard(bool difct)
         {
             bool ok = false;
             if (difct == true)
             {
-                l = new Label[ezlv + 1];
-                for (int i = 0; i <= ezlv && i <= 6; i++)
+                l = new Label[ezlv];
+                for (int i = 0; i < ezlv && i < 10; i++)
                 {
                     l[i] = new Label();
                     panel2.Controls.Add(l[i]);
@@ -30,21 +36,21 @@ namespace Cube_Flip
                     l[i].Size = new Size(400, 100);
                     l[i].ForeColor = Color.White;
                     l[i].Font = new Font("Microsoft Sans Serif", 20);
-                    l[i].BackColor = Color.FromArgb(11, 14, 40);
+                    l[i].BackColor = Color.Transparent;
                     l[i].BringToFront();
                     ok = false;
-                    if (nl[i] >= 60)
+                    if (eazylevel[i].time >= 1000)
                         ok = true;
                     if (ok == false)
-                        l[i].Text = (i + 1) + ".  " + nl[i] + " seconds";
+                        l[i].Text = (i + 1) + ".  " + eazylevel[i].username + " " + eazylevel[i].time + " ms";
                     else
-                        l[i].Text = (i + 1) + ".  " + nl[i] / 60 + " minutes and " + nl[i] % 60 + " seconds";
+                        l[i].Text = (i + 1) + ".  " + eazylevel[i].username + " " + (double)eazylevel[i].time / 1000.0 + " s";
                 }
             }
             else
             {
                 h = new Label[hdlv + 1];
-                for (int i = 0; i <= hdlv && i <= 6; i++)
+                for (int i = 0; i <= hdlv && i < 10; i++)
                 {
                     h[i] = new Label();
                     panel3.Controls.Add(h[i]);
@@ -52,65 +58,93 @@ namespace Cube_Flip
                     h[i].Size = new Size(400, 100);
                     h[i].ForeColor = Color.White;
                     h[i].Font = new Font("Microsoft Sans Serif", 20);
-                    h[i].BackColor = Color.FromArgb(11, 14, 40);
+                    h[i].BackColor = Color.Transparent;
                     h[i].BringToFront();
                     ok = false;
-                    if (hl[i] >= 60)
+                    if (hardlevel[i].time >= 1000)
                         ok = true;
                     if (ok == false)
-                        h[i].Text = (i + 1) + ".  " + hl[i] + " seconds";
+                        h[i].Text = (i + 1) + ".  " + hardlevel[i].username + " " + hardlevel[i].time + " ms";
                     else
-                        h[i].Text = (i + 1) + ".  " + hl[i] / 60 + " minutes and " + hl[i] % 60 + " seconds";
+                        h[i].Text = (i + 1) + ".  " + hardlevel[i].username + " " + (double)hardlevel[i].time / 1000.0 + " s";
                 }
             }
         }
         public CubeFlip()
         {
+            StreamReader cin = new StreamReader("Scores.dtx");
+            StreamReader cin2 = new StreamReader("curentuser.dtx");
             InitializeComponent();
+            curentuser = new curent();
+            curentuser.username = cin2.ReadLine();
+            curentuser.eazytime = -1;
+            curentuser.hardtime = -1;
+            curentuser.eazyposition = -1;
+            curentuser.hardposition = -1;
+            cin2.Close();
+            this.Text = "Flip Parity";
             ezlv = int.Parse(cin.ReadLine());
             hdlv = int.Parse(cin.ReadLine());
-            nl = new int[1000];
-            hl = new int[1000];
+            eazylevel = new leader[ezlv + 1];
+            hardlevel = new leader[hdlv + 1];
             l = new Label[ezlv];
             h = new Label[hdlv];
-            for (int i = 0; i < ezlv && i < 7; i++)
+            for (int i = 0; i < ezlv; i++)
             {
-                bool ok = false;
-                nl[i] = int.Parse(cin.ReadLine());
-                if (nl[i] >= 60)
-                    ok = true;
-                l[i] = new Label();
-                panel2.Controls.Add(l[i]);
-                l[i].Location = new Point(20, 92 + i * 50);
-                l[i].Size = new Size(400, 100);
-                if (ok == false)
-                    l[i].Text = (i + 1) + ".  " + nl[i] + " seconds";
-                else
-                    l[i].Text = (i + 1) + ".  " + nl[i] / 60 + " minutes and " + nl[i] % 60 + " seconds";
-                l[i].ForeColor = Color.White;
-                l[i].Font = new Font("Microsoft Sans Serif", 20);
-                l[i].BackColor = Color.FromArgb(11, 14, 40);
-                l[i].BringToFront();
 
+                eazylevel[i].username = cin.ReadLine();
+                eazylevel[i].time = int.Parse(cin.ReadLine());
+                if (curentuser.username == eazylevel[i].username)
+                {
+                    curentuser.eazytime = eazylevel[i].time;
+                    curentuser.eazyposition = i + 1;
+                }
+                if (i < 10)
+                {
+                    bool ok = false;
+                    if (eazylevel[i].time >= 1000)
+                        ok = true;
+                    l[i] = new Label();
+                    panel2.Controls.Add(l[i]);
+                    l[i].Location = new Point(20, 92 + i * 50);
+                    l[i].Size = new Size(400, 100);
+                    if (ok == false)
+                        l[i].Text = (i + 1) + ".  " + eazylevel[i].username + " " + eazylevel[i].time + "ms";
+                    else
+                        l[i].Text = (i + 1) + ".  " + eazylevel[i].username + " " + (double)eazylevel[i].time / 1000.0 + "s";
+                    l[i].ForeColor = Color.White;
+                    l[i].Font = new Font("Microsoft Sans Serif", 20);
+                    l[i].BackColor = Color.Transparent;
+                    l[i].BringToFront();
+                }
             }
             for (int i = 0; i < hdlv; i++)
             {
-                hl[i] = int.Parse(cin.ReadLine());
-                bool ok = false;
-                if (hl[i] >= 60)
-                    ok = true;
-                h[i] = new Label();
-                panel3.Controls.Add(h[i]);
-                h[i].Location = new Point(20, 92 + i * 50);
-                h[i].Size = new Size(400, 100);
-                if (ok == false)
-                    h[i].Text = (i + 1) + ".  " + hl[i] + " seconds";
-                else
-                    h[i].Text = (i + 1) + ".  " + hl[i] / 60 + " minutes and " + hl[i] % 60 + " seconds";
-                h[i].ForeColor = Color.White;
-                h[i].Font = new Font("Microsoft Sans Serif", 20);
-                h[i].BackColor = Color.FromArgb(11, 14, 40);
-                h[i].BringToFront();
+                hardlevel[i].username = cin.ReadLine();
+                hardlevel[i].time = int.Parse(cin.ReadLine());
+                if (curentuser.username == hardlevel[i].username)
+                {
+                    curentuser.hardtime = hardlevel[i].time;
+                    curentuser.hardposition = i + 1;
+                }
+                if (i < 10)
+                {
+                    bool ok = false;
+                    if (hardlevel[i].time >= 1000)
+                        ok = true;
+                    h[i] = new Label();
+                    panel3.Controls.Add(h[i]);
+                    h[i].Location = new Point(20, 92 + i * 50);
+                    h[i].Size = new Size(400, 100);
+                    if (ok == false)
+                        h[i].Text = (i + 1) + ".  " + hardlevel[i].username + " " + hardlevel[i].time + "ms";
+                    else
+                        h[i].Text = (i + 1) + ".  " + hardlevel[i].username + " " + (double)hardlevel[i].time / 1000.0 + "s";
+                    h[i].ForeColor = Color.White;
+                    h[i].Font = new Font("Microsoft Sans Serif", 20);
+                    h[i].BackColor = Color.Transparent;
+                    h[i].BringToFront();
+                }
             }
             cin.Close();
         }
@@ -244,14 +278,52 @@ namespace Cube_Flip
                 watch.Stop();
                 if (x == 4)
                 {
-                    nl[ezlv] = (int)watch.Elapsed.TotalSeconds;
-                    Array.Sort(nl, 0, ezlv + 1);
+                    if (curentuser.eazytime == -1)
+                    {
+                        curentuser.eazytime = (int)watch.Elapsed.TotalMilliseconds;
+                        eazylevel[ezlv].username = curentuser.username;
+                        eazylevel[ezlv].time = (int)watch.Elapsed.TotalMilliseconds;
+                        ezlv++;
+                    }
+                    if (curentuser.eazytime > (int)watch.Elapsed.TotalMilliseconds)
+                    {
+                        curentuser.eazytime = (int)watch.Elapsed.TotalMilliseconds;
+                        eazylevel[curentuser.eazyposition - 1].time = curentuser.eazytime;
+                    }
+                    Array.Sort(eazylevel, 0, ezlv, Comparer<leader>.Create((x, y) => x.time.CompareTo(y.time)));
+                    for (int i = 0; i < ezlv; i++)
+                    {
+                        if (eazylevel[i].username == curentuser.username)
+                        {
+                            curentuser.eazyposition = i + 1;
+                            break;
+                        }
+                    }
                 }
 
                 else
                 {
-                    hl[hdlv] = (int)watch.Elapsed.TotalSeconds;
-                    Array.Sort(hl, 0, hdlv + 1);
+                    if (curentuser.hardtime == -1)
+                    {
+                        curentuser.hardtime = (int)watch.Elapsed.TotalMilliseconds;
+                        hardlevel[hdlv].username = curentuser.username;
+                        hardlevel[hdlv].time = (int)watch.Elapsed.TotalMilliseconds;
+                        hdlv++;
+                    }
+                    if (curentuser.hardtime > (int)watch.Elapsed.TotalMilliseconds)
+                    {
+                        curentuser.hardtime = (int)watch.Elapsed.TotalMilliseconds;
+                        hardlevel[curentuser.hardposition - 1].time = curentuser.hardtime;
+                    }
+                    Array.Sort(hardlevel, 0, hdlv, Comparer<leader>.Create((x, y) => x.time.CompareTo(y.time)));
+                    for (int i = 0; i < hdlv; i++)
+                    {
+                        if (hardlevel[i].username == curentuser.username)
+                        {
+                            curentuser.hardposition = i + 1;
+                            break;
+                        }
+                    }
                 }
                 leaderboard(x == 4);
                 watch.Reset();
@@ -291,10 +363,6 @@ namespace Cube_Flip
                 pictureBox5.Visible = false;
                 button1.Visible = true;
                 button2.Visible = true;
-                if (x == 4)
-                    ezlv++;
-                else
-                    hdlv++;
             }
         }
         private void nmk(object sender, EventArgs e)
@@ -315,12 +383,12 @@ namespace Cube_Flip
         }
         private void playbutton_MouseEnter(object sender, EventArgs e)
         {
-            playbutton.BackColor = Color.DeepSkyBlue;
-            playbutton.ForeColor = Color.Black;
+            playbutton.BackColor = Color.FromArgb(182, 78, 255);
+            playbutton.ForeColor = Color.Transparent;
         }
         private void playbutton_MouseLeave(object sender, EventArgs e)
         {
-            playbutton.BackColor = Color.FromArgb(11, 14, 40);
+            playbutton.BackColor = Color.Transparent;
             playbutton.ForeColor = Color.WhiteSmoke;
         }
         private void Htp_Click(object sender, EventArgs e)
@@ -340,7 +408,7 @@ namespace Cube_Flip
         }
         private void Htp_MouseLeave(object sender, EventArgs e)
         {
-            Htp.BackColor = Color.FromArgb(11, 14, 40);
+            Htp.BackColor = Color.Transparent;
             Htp.ForeColor = Color.WhiteSmoke;
         }
         private void settings_Click(object sender, EventArgs e)
@@ -357,19 +425,25 @@ namespace Cube_Flip
         }
         private void settings_MouseLeave(object sender, EventArgs e)
         {
-            settings.BackColor = Color.FromArgb(11, 14, 40);
+            settings.BackColor = Color.Transparent;
             settings.ForeColor = Color.WhiteSmoke;
         }
         private void exit_Click(object sender, EventArgs e)
         {
             StreamWriter cout = new StreamWriter("Scores.dtx");
             Application.Exit();
-            cout.WriteLine(ezlv <= 7 ? ezlv : 7);
-            cout.WriteLine(hdlv <= 7 ? hdlv : 7);
-            for (int i = 0; i < ezlv && i < 7; i++)
-                cout.WriteLine(nl[i]);
-            for (int i = 0; i < hdlv && i < 7; i++)
-                cout.WriteLine(hl[i]);
+            cout.WriteLine(ezlv);
+            cout.WriteLine(hdlv);
+            for (int i = 0; i < ezlv; i++)
+            {
+                cout.WriteLine(eazylevel[i].username);
+                cout.WriteLine(eazylevel[i].time);
+            }
+            for (int i = 0; i < hdlv; i++)
+            {
+                cout.WriteLine(hardlevel[i].username);
+                cout.WriteLine(hardlevel[i].time);
+            }
             cout.Close();
         }
         private void exit_MouseEnter(object sender, EventArgs e)
@@ -379,7 +453,7 @@ namespace Cube_Flip
         }
         private void exit_MouseLeave(object sender, EventArgs e)
         {
-            exit.BackColor = Color.FromArgb(11, 14, 40);
+            exit.BackColor = Color.Transparent;
             exit.ForeColor = Color.WhiteSmoke;
         }
 
@@ -419,12 +493,18 @@ namespace Cube_Flip
         {
             StreamWriter cout = new StreamWriter("Scores.dtx");
             Application.Exit();
-            cout.WriteLine(ezlv <= 7 ? ezlv : 7);
-            cout.WriteLine(hdlv <= 7 ? hdlv : 7);
-            for (int i = 0; i < ezlv && i < 7; i++)
-                cout.WriteLine(nl[i]);
-            for (int i = 0; i < hdlv && i < 7; i++)
-                cout.WriteLine(hl[i]);
+            cout.WriteLine(ezlv);
+            cout.WriteLine(hdlv);
+            for (int i = 0; i < ezlv; i++)
+            {
+                cout.WriteLine(eazylevel[i].username);
+                cout.WriteLine(eazylevel[i].time);
+            }
+            for (int i = 0; i < hdlv; i++)
+            {
+                cout.WriteLine(hardlevel[i].username);
+                cout.WriteLine(hardlevel[i].time);
+            }
             cout.Close();
         }
         private void button2_MouseEnter(object sender, EventArgs e)
@@ -493,6 +573,16 @@ namespace Cube_Flip
         }
 
         private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void settings_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_2(object sender, EventArgs e)
         {
 
         }

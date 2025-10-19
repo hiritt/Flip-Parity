@@ -58,6 +58,7 @@
             playbutton.TabIndex = 2;
             playbutton.Text = "Play as guest";
             playbutton.UseVisualStyleBackColor = true;
+            playbutton.Visible = false;
             playbutton.Click += playbutton_Click;
             playbutton.MouseEnter += me;
             playbutton.MouseLeave += ml;
@@ -207,7 +208,6 @@
             textBox2.Size = new Size(400, 53);
             textBox2.TabIndex = 7;
             textBox2.TextAlign = HorizontalAlignment.Center;
-            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label2
             // 

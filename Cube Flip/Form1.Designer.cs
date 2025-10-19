@@ -31,12 +31,10 @@ namespace Cube_Flip
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CubeFlip));
-            label1 = new Label();
             playbutton = new Button();
             Htp = new Button();
             settings = new Button();
             exit = new Button();
-            pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
             pictureBox8 = new PictureBox();
@@ -52,7 +50,6 @@ namespace Cube_Flip
             button2 = new Button();
             pictureBox7 = new PictureBox();
             button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -65,98 +62,76 @@ namespace Cube_Flip
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(11, 14, 40);
-            label1.Font = new Font("Segoe UI", 72F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(90, 60);
-            label1.Name = "label1";
-            label1.Size = new Size(510, 128);
-            label1.TabIndex = 0;
-            label1.Text = "CUBE FLIP";
-            // 
             // playbutton
             // 
-            playbutton.BackColor = Color.FromArgb(11, 14, 40);
-            playbutton.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+            playbutton.BackColor = Color.Transparent;
+            playbutton.FlatAppearance.BorderColor = Color.FromArgb(182, 78, 255);
             playbutton.FlatAppearance.BorderSize = 4;
             playbutton.FlatStyle = FlatStyle.Flat;
-            playbutton.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            playbutton.ForeColor = Color.WhiteSmoke;
-            playbutton.Location = new Point(100, 250);
+            playbutton.Font = new Font("Segoe UI", 65F, FontStyle.Bold);
+            playbutton.ForeColor = Color.White;
+            playbutton.Location = new Point(205, 500);
             playbutton.Name = "playbutton";
-            playbutton.Size = new Size(320, 70);
+            playbutton.Size = new Size(550, 165);
             playbutton.TabIndex = 1;
             playbutton.Text = "Play";
-            playbutton.UseVisualStyleBackColor = true;
+            playbutton.UseVisualStyleBackColor = false;
             playbutton.Click += playbutton_Click;
             playbutton.MouseEnter += playbutton_MouseEnter;
             playbutton.MouseLeave += playbutton_MouseLeave;
             // 
             // Htp
             // 
-            Htp.BackColor = Color.FromArgb(11, 14, 40);
+            Htp.BackColor = Color.Transparent;
             Htp.FlatAppearance.BorderColor = Color.FromArgb(182, 78, 255);
             Htp.FlatAppearance.BorderSize = 4;
             Htp.FlatStyle = FlatStyle.Flat;
             Htp.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Htp.ForeColor = Color.WhiteSmoke;
-            Htp.Location = new Point(100, 350);
+            Htp.Location = new Point(106, 950);
             Htp.Name = "Htp";
             Htp.Size = new Size(320, 70);
             Htp.TabIndex = 2;
             Htp.Text = "How to play";
-            Htp.UseVisualStyleBackColor = true;
+            Htp.UseVisualStyleBackColor = false;
             Htp.Click += Htp_Click;
             Htp.MouseEnter += Htp_MouseEnter;
             Htp.MouseLeave += Htp_MouseLeave;
             // 
             // settings
             // 
-            settings.BackColor = Color.FromArgb(11, 14, 40);
+            settings.BackColor = Color.Transparent;
             settings.FlatAppearance.BorderColor = Color.FromArgb(182, 78, 255);
             settings.FlatAppearance.BorderSize = 4;
             settings.FlatStyle = FlatStyle.Flat;
             settings.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             settings.ForeColor = Color.WhiteSmoke;
-            settings.Location = new Point(100, 450);
+            settings.Location = new Point(320, 850);
             settings.Name = "settings";
             settings.Size = new Size(320, 70);
             settings.TabIndex = 3;
             settings.Text = "Coming soon!";
-            settings.UseVisualStyleBackColor = true;
+            settings.UseVisualStyleBackColor = false;
             settings.MouseEnter += settings_MouseEnter;
             settings.MouseLeave += settings_MouseLeave;
             // 
             // exit
             // 
-            exit.BackColor = Color.FromArgb(11, 14, 40);
+            exit.BackColor = Color.Transparent;
             exit.FlatAppearance.BorderColor = Color.FromArgb(182, 78, 255);
             exit.FlatAppearance.BorderSize = 4;
             exit.FlatStyle = FlatStyle.Flat;
             exit.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             exit.ForeColor = Color.WhiteSmoke;
-            exit.Location = new Point(100, 550);
+            exit.Location = new Point(532, 950);
             exit.Name = "exit";
             exit.Size = new Size(320, 70);
             exit.TabIndex = 4;
             exit.Text = "Exit";
-            exit.UseVisualStyleBackColor = true;
+            exit.UseVisualStyleBackColor = false;
             exit.Click += exit_Click;
             exit.MouseEnter += exit_MouseEnter;
             exit.MouseLeave += exit_MouseLeave;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(620, 120);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(500, 500);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -171,13 +146,12 @@ namespace Cube_Flip
             // 
             // panel1
             // 
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.Controls.Add(pictureBox8);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(playbutton);
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(Htp);
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(settings);
             panel1.Controls.Add(exit);
             panel1.Location = new Point(0, 0);
@@ -198,10 +172,11 @@ namespace Cube_Flip
             // 
             // panel3
             // 
+            panel3.BackColor = Color.Transparent;
             panel3.Controls.Add(label2);
-            panel3.Location = new Point(1286, 230);
+            panel3.Location = new Point(1286, 233);
             panel3.Name = "panel3";
-            panel3.Size = new Size(598, 611);
+            panel3.Size = new Size(598, 834);
             panel3.TabIndex = 7;
             // 
             // label2
@@ -211,28 +186,31 @@ namespace Cube_Flip
             label2.ForeColor = Color.White;
             label2.Location = new Point(15, 20);
             label2.Name = "label2";
-            label2.Size = new Size(345, 45);
+            label2.Size = new Size(295, 45);
             label2.TabIndex = 0;
-            label2.Text = "Your top hard solves:";
+            label2.Text = "Leaderboard hard";
+            label2.Click += label2_Click_2;
             // 
             // panel2
             // 
+            panel2.BackColor = Color.Transparent;
             panel2.Controls.Add(ledtitle);
             panel2.Location = new Point(1286, 230);
             panel2.Name = "panel2";
-            panel2.Size = new Size(595, 447);
+            panel2.Size = new Size(595, 834);
             panel2.TabIndex = 6;
             // 
             // ledtitle
             // 
             ledtitle.AutoSize = true;
+            ledtitle.BackColor = Color.Transparent;
             ledtitle.Font = new Font("Segoe UI", 24.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ledtitle.ForeColor = Color.White;
             ledtitle.Location = new Point(15, 20);
             ledtitle.Name = "ledtitle";
-            ledtitle.Size = new Size(343, 45);
+            ledtitle.Size = new Size(293, 45);
             ledtitle.TabIndex = 0;
-            ledtitle.Text = "Your top easy solves:";
+            ledtitle.Text = "Leaderboard easy";
             ledtitle.Click += label2_Click;
             // 
             // pictureBox3
@@ -352,6 +330,7 @@ namespace Cube_Flip
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 14, 40);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1920, 1061);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -368,10 +347,8 @@ namespace Cube_Flip
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -386,13 +363,10 @@ namespace Cube_Flip
         }
 
         #endregion
-
-        private Label label1;
         private Button playbutton;
         private Button Htp;
         private Button settings;
         private Button exit;
-        private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Panel panel1;
         private PictureBox pictureBox3;
