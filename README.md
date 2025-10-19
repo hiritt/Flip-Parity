@@ -1,4 +1,4 @@
-# 🧊 Cube Flip
+# 🧊 FLIP PARITY
 
 A fun and minimal puzzle game where your goal is simple: **make all the cubes pink!**
 Challenge your logic and strategy skills across two difficulty levels.
