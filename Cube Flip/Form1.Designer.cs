@@ -42,24 +42,25 @@ namespace Cube_Flip
             label2 = new Label();
             panel2 = new Panel();
             ledtitle = new Label();
-            pictureBox3 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox4 = new PictureBox();
+            easybutton = new PictureBox();
+            hardbutton = new PictureBox();
             pictureBox6 = new PictureBox();
             button1 = new Button();
             button2 = new Button();
             pictureBox7 = new PictureBox();
             button3 = new Button();
+            label3 = new Label();
+            loadingscreen = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)easybutton).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)hardbutton).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)loadingscreen).BeginInit();
             SuspendLayout();
             // 
             // playbutton
@@ -156,7 +157,7 @@ namespace Cube_Flip
             panel1.Controls.Add(exit);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1920, 1080);
+            panel1.Size = new Size(0, 0);
             panel1.TabIndex = 7;
             // 
             // pictureBox8
@@ -213,47 +214,36 @@ namespace Cube_Flip
             ledtitle.Text = "Leaderboard easy";
             ledtitle.Click += label2_Click;
             // 
-            // pictureBox3
+            // easybutton
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(510, 290);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(400, 500);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 6;
-            pictureBox3.TabStop = false;
-            pictureBox3.Visible = false;
-            pictureBox3.Click += pictureBox3_Click;
+            easybutton.Image = (Image)resources.GetObject("easybutton.Image");
+            easybutton.Location = new Point(510, 290);
+            easybutton.Name = "easybutton";
+            easybutton.Size = new Size(400, 500);
+            easybutton.SizeMode = PictureBoxSizeMode.StretchImage;
+            easybutton.TabIndex = 6;
+            easybutton.TabStop = false;
+            easybutton.Visible = false;
+            easybutton.Click += pictureBox3_Click;
             // 
-            // pictureBox5
+            // hardbutton
             // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(398, 177);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(100, 50);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 6;
-            pictureBox5.TabStop = false;
-            pictureBox5.Visible = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1010, 290);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(0, 0);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 8;
-            pictureBox4.TabStop = false;
-            pictureBox4.Visible = false;
-            pictureBox4.Click += pictureBox4_Click;
+            hardbutton.Image = (Image)resources.GetObject("hardbutton.Image");
+            hardbutton.Location = new Point(0, 0);
+            hardbutton.Name = "hardbutton";
+            hardbutton.Size = new Size(0, 0);
+            hardbutton.SizeMode = PictureBoxSizeMode.StretchImage;
+            hardbutton.TabIndex = 8;
+            hardbutton.TabStop = false;
+            hardbutton.Visible = false;
+            hardbutton.Click += pictureBox4_Click;
             // 
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(218, 671);
+            pictureBox6.Location = new Point(0, 0);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(1000, 500);
+            pictureBox6.Size = new Size(100, 100);
             pictureBox6.TabIndex = 6;
             pictureBox6.TabStop = false;
             pictureBox6.Visible = false;
@@ -301,7 +291,7 @@ namespace Cube_Flip
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
             pictureBox7.Location = new Point(0, 0);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(100, 50);
+            pictureBox7.Size = new Size(1920, 50);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 7;
             pictureBox7.TabStop = false;
@@ -325,6 +315,29 @@ namespace Cube_Flip
             button3.MouseEnter += button3_MouseEnter;
             button3.MouseLeave += button3_MouseLeave;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 39.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(833, 398);
+            label3.Name = "label3";
+            label3.Size = new Size(254, 71);
+            label3.TabIndex = 10;
+            label3.Text = "10.9999S";
+            label3.Visible = false;
+            // 
+            // loadingscreen
+            // 
+            loadingscreen.Image = (Image)resources.GetObject("loadingscreen.Image");
+            loadingscreen.Location = new Point(0, 0);
+            loadingscreen.Name = "loadingscreen";
+            loadingscreen.Size = new Size(100, 50);
+            loadingscreen.TabIndex = 11;
+            loadingscreen.TabStop = false;
+            loadingscreen.Visible = false;
+            // 
             // CubeFlip
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -332,14 +345,15 @@ namespace Cube_Flip
             BackColor = Color.FromArgb(11, 14, 40);
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1920, 1061);
+            Controls.Add(loadingscreen);
+            Controls.Add(label3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(pictureBox4);
+            Controls.Add(hardbutton);
             Controls.Add(pictureBox2);
             Controls.Add(panel1);
-            Controls.Add(pictureBox5);
             Controls.Add(pictureBox6);
-            Controls.Add(pictureBox3);
+            Controls.Add(easybutton);
             Controls.Add(pictureBox7);
             Controls.Add(button3);
             FormBorderStyle = FormBorderStyle.None;
@@ -354,12 +368,13 @@ namespace Cube_Flip
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)easybutton).EndInit();
+            ((System.ComponentModel.ISupportInitialize)hardbutton).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)loadingscreen).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -369,9 +384,8 @@ namespace Cube_Flip
         private Button exit;
         private PictureBox pictureBox2;
         private Panel panel1;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
+        private PictureBox easybutton;
+        private PictureBox hardbutton;
         private PictureBox pictureBox6;
         private Button button2;
         private Button button1;
@@ -382,5 +396,7 @@ namespace Cube_Flip
         private PictureBox pictureBox7;
         private Button button3;
         private PictureBox pictureBox8;
+        private Label label3;
+        private PictureBox loadingscreen;
     }
 }

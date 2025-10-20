@@ -21,6 +21,7 @@ namespace Cube_Flip
         public Form2()
         {
             InitializeComponent();
+            panel1.Size = new Size(1920,1080);
             this.Text = "Log In";
             StreamReader sr = new StreamReader("data.dtx");
             n = int.Parse(sr.ReadLine());

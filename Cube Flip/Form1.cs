@@ -75,6 +75,7 @@ namespace Cube_Flip
             StreamReader cin = new StreamReader("Scores.dtx");
             StreamReader cin2 = new StreamReader("curentuser.dtx");
             InitializeComponent();
+            panel1.Size = new Size(1920, 1080);
             curentuser = new curent();
             curentuser.username = cin2.ReadLine();
             curentuser.eazytime = -1;
@@ -184,7 +185,6 @@ namespace Cube_Flip
         void generate(int x)
         {
             a = new Button[x, x];
-            watch.Start();
             int n = 701;
             for (int i = 0; i < x; i++, n += 524 / x)
                 for (int j = 0, m = 150; j < x; j++, m += 524 / x)
@@ -201,6 +201,8 @@ namespace Cube_Flip
                     a[i, j].BackColor = Color.FromArgb(11, 14, 40);
                     a[i, j].BringToFront();
                 }
+            loadingscreen.Visible = false;
+            watch.Start();
         }
         private void button(object sender, EventArgs e)
         {
@@ -326,7 +328,7 @@ namespace Cube_Flip
                     }
                 }
                 leaderboard(x == 4);
-                watch.Reset();
+                
                 for (int i = 0; i < x; i++)
                     for (int j = 0; j < x; j++)
                     {
@@ -356,11 +358,15 @@ namespace Cube_Flip
 
                     }
                 }
-
+                if(watch.Elapsed.TotalMilliseconds < 1000)
+                    label3.Text = (int)watch.Elapsed.TotalMilliseconds + " ms";
+                else
+                    label3.Text =  (float)((int)watch.Elapsed.TotalMilliseconds) / 1000.0 + " s";
+                label3.Visible = true;
+                watch.Reset();
                 pictureBox6.Size = new Size(1920, 1080);
                 pictureBox6.Location = new Point(0, 0);
                 pictureBox6.Visible = true;
-                pictureBox5.Visible = false;
                 button1.Visible = true;
                 button2.Visible = true;
             }
@@ -374,11 +380,11 @@ namespace Cube_Flip
             pictureBox2.Size = new Size(1920, 1080);
             panel1.Visible = false;
             pictureBox2.Visible = true;
-            pictureBox4.Size = new Size(400, 500);
-            pictureBox4.Visible = true;
-            pictureBox3.Visible = true;
-            pictureBox4.BringToFront();
-            pictureBox3.BringToFront();
+            hardbutton.Size = new Size(400, 500);
+            hardbutton.Visible = true;
+            easybutton.Visible = true;
+            hardbutton.BringToFront();
+            easybutton.BringToFront();
 
         }
         private void playbutton_MouseEnter(object sender, EventArgs e)
@@ -458,35 +464,36 @@ namespace Cube_Flip
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            pictureBox3.Visible = false;
-            pictureBox4.Visible = false;
+        { 
+            loadingscreen.BringToFront();
+            loadingscreen.Size = new Size(1920, 1080);
+            loadingscreen.Visible = true;
+            button3.Visible = false;
+            easybutton.Visible = false;
+            hardbutton.Visible = false;
             pictureBox2.Visible = false;
-            pictureBox5.Visible = true;
-            pictureBox5.Size = new Size(1920, 1080);
-            pictureBox5.Location = new Point(0, 0);
-            pictureBox5.BringToFront();
-
+           
             x = 4;
             v = new int[x, x];
-            generate(x);
             total = 0;
+            generate(x);
+            
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            pictureBox3.Visible = false;
-            pictureBox4.Visible = false;
+            loadingscreen.BringToFront();
+            loadingscreen.Size = new Size(1920, 1080);
+            loadingscreen.Visible = true;
+            button3.Visible = false;
+            easybutton.Visible = false;
+            hardbutton.Visible = false;
             pictureBox2.Visible = false;
-            pictureBox5.Visible = true;
-            pictureBox5.Size = new Size(1920, 1080);
-            pictureBox5.Location = new Point(0, 0);
-            pictureBox5.BringToFront();
-
             x = 16;
             v = new int[x, x];
-            generate(x);
             total = 0;
+            generate(x);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -522,6 +529,7 @@ namespace Cube_Flip
         private void button1_Click(object sender, EventArgs e)
         {
             pictureBox6.Visible = false;
+            label3.Visible = false;
             panel1.Visible = true;
             button1.Visible = false;
             button2.Visible = false;

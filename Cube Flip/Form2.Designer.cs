@@ -133,7 +133,7 @@
             panel1.Controls.Add(textBox2);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1920, 1080);
+            panel1.Size = new Size(0, 0);
             panel1.TabIndex = 7;
             panel1.Visible = false;
             // 
