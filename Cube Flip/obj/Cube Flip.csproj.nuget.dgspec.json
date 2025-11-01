@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hirit\\OneDrive\\Desktop\\Cube Flip\\Cube Flip\\Cube Flip.csproj": {}
+    "D:\\Coding Projects\\C# Projects\\Hirit Ianis Joc Culori\\Cube Flip\\Cube Flip.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hirit\\OneDrive\\Desktop\\Cube Flip\\Cube Flip\\Cube Flip.csproj": {
+    "D:\\Coding Projects\\C# Projects\\Hirit Ianis Joc Culori\\Cube Flip\\Cube Flip.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hirit\\OneDrive\\Desktop\\Cube Flip\\Cube Flip\\Cube Flip.csproj",
+        "projectUniqueName": "D:\\Coding Projects\\C# Projects\\Hirit Ianis Joc Culori\\Cube Flip\\Cube Flip.csproj",
         "projectName": "Cube Flip",
-        "projectPath": "C:\\Users\\hirit\\OneDrive\\Desktop\\Cube Flip\\Cube Flip\\Cube Flip.csproj",
+        "projectPath": "D:\\Coding Projects\\C# Projects\\Hirit Ianis Joc Culori\\Cube Flip\\Cube Flip.csproj",
         "packagesPath": "C:\\Users\\hirit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hirit\\OneDrive\\Desktop\\Cube Flip\\Cube Flip\\obj\\",
+        "outputPath": "D:\\Coding Projects\\C# Projects\\Hirit Ianis Joc Culori\\Cube Flip\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

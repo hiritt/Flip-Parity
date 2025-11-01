@@ -41,6 +41,7 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label2 = new Label();
+            label3 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -222,12 +223,26 @@
             label2.Text = "Account created succesfully!";
             label2.Visible = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(789, 362);
+            label3.Name = "label3";
+            label3.Size = new Size(332, 32);
+            label3.TabIndex = 13;
+            label3.Text = "Wrong username/password";
+            label3.Visible = false;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1904, 1041);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(panel1);
             Controls.Add(CreateAcc);
@@ -258,5 +273,6 @@
         private TextBox textBox2;
         private Label label1;
         private Label label2;
+        private Label label3;
     }
 }

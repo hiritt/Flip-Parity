@@ -100,14 +100,17 @@ namespace Cube_Flip
 
         private void LogInButton_Click(object sender, EventArgs e)
         {
+            bool ok = false;
             string inputString = password.Text;
             byte[] data = System.Text.Encoding.UTF8.GetBytes(inputString);
             byte[] hashBytes = System.Security.Cryptography.SHA256.HashData(data);
             string hash = BitConverter.ToString(hashBytes).Replace("-", "");
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n&&ok == false; i++)
             {
+                //MessageBox.Show(client[i].password + " " + hash);
                 if (username.Text == client[i].username && hash == client[i].password)
                 {
+                    ok = true;
                     StreamWriter sw = new StreamWriter("curentuser.dtx");
                     sw.WriteLine(username.Text);
                     sw.Close();
@@ -116,6 +119,12 @@ namespace Cube_Flip
                     form.Show();
                     return;
                 }
+            }
+            if(ok==false)
+            { 
+                label3.Visible = true;
+                wait(2500);
+                label3.Visible = false;
             }
         }
 

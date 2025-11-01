@@ -16,3 +16,21 @@ C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\ref
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.Properties.Resources.resources
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.Form2.resources
 C:\Users\hirit\OneDrive\Desktop\Cube Flip\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.CubeFlip.resources
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.exe
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.deps.json
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.runtimeconfig.json
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.dll
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\bin\Debug\net8.0-windows\Cube Flip.pdb
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.CubeFlip.resources
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.Form2.resources
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\Cube_Flip.Properties.Resources.resources
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.csproj.GenerateResource.cache
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.AssemblyInfoInputs.cache
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.AssemblyInfo.cs
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.csproj.CoreCompileInputs.cache
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.dll
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\refint\Cube Flip.dll
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.pdb
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\Cube Flip.genruntimeconfig.cache
+D:\Coding Projects\C# Projects\Hirit Ianis Joc Culori\Cube Flip\obj\Debug\net8.0-windows\ref\Cube Flip.dll

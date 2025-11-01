@@ -51,6 +51,9 @@ namespace Cube_Flip
             button3 = new Button();
             label3 = new Label();
             loadingscreen = new PictureBox();
+            label1 = new Label();
+            textBox1 = new TextBox();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -139,7 +142,7 @@ namespace Cube_Flip
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(0, 12);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(0, 0);
+            pictureBox2.Size = new Size(100, 100);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
@@ -229,9 +232,9 @@ namespace Cube_Flip
             // hardbutton
             // 
             hardbutton.Image = (Image)resources.GetObject("hardbutton.Image");
-            hardbutton.Location = new Point(0, 0);
+            hardbutton.Location = new Point(1010, 290);
             hardbutton.Name = "hardbutton";
-            hardbutton.Size = new Size(0, 0);
+            hardbutton.Size = new Size(400, 500);
             hardbutton.SizeMode = PictureBoxSizeMode.StretchImage;
             hardbutton.TabIndex = 8;
             hardbutton.TabStop = false;
@@ -338,6 +341,48 @@ namespace Cube_Flip
             loadingscreen.TabStop = false;
             loadingscreen.Visible = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 39.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(669, 843);
+            label1.Name = "label1";
+            label1.Size = new Size(581, 71);
+            label1.TabIndex = 12;
+            label1.Text = "Create a custom level!";
+            label1.Visible = false;
+            label1.Click += label1_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(182, 0, 205);
+            textBox1.Font = new Font("Segoe UI", 40F);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(683, 940);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "[1,20]";
+            textBox1.Size = new Size(141, 78);
+            textBox1.TabIndex = 13;
+            textBox1.Visible = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Transparent;
+            button4.FlatAppearance.BorderColor = Color.FromArgb(182, 78, 255);
+            button4.FlatAppearance.BorderSize = 4;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.WhiteSmoke;
+            button4.Location = new Point(875, 940);
+            button4.Name = "button4";
+            button4.Size = new Size(320, 70);
+            button4.TabIndex = 14;
+            button4.Text = "Generate";
+            button4.UseVisualStyleBackColor = false;
+            button4.Visible = false;
+            button4.Click += button4_Click;
+            // 
             // CubeFlip
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -345,6 +390,9 @@ namespace Cube_Flip
             BackColor = Color.FromArgb(11, 14, 40);
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1920, 1061);
+            Controls.Add(button4);
+            Controls.Add(textBox1);
+            Controls.Add(label1);
             Controls.Add(loadingscreen);
             Controls.Add(label3);
             Controls.Add(button2);
@@ -398,5 +446,8 @@ namespace Cube_Flip
         private PictureBox pictureBox8;
         private Label label3;
         private PictureBox loadingscreen;
+        private Label label1;
+        private TextBox textBox1;
+        private Button button4;
     }
 }

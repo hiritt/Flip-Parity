@@ -22,10 +22,10 @@ namespace Cube_Flip
         }
         curent curentuser;
         Label[] l, h;
-        void leaderboard(bool difct)
+        void leaderboard(int difct)
         {
             bool ok = false;
-            if (difct == true)
+            if (difct == 4)
             {
                 l = new Label[ezlv];
                 for (int i = 0; i < ezlv && i < 10; i++)
@@ -47,10 +47,10 @@ namespace Cube_Flip
                         l[i].Text = (i + 1) + ".  " + eazylevel[i].username + " " + (double)eazylevel[i].time / 1000.0 + " s";
                 }
             }
-            else
+            if(difct == 16)
             {
-                h = new Label[hdlv + 1];
-                for (int i = 0; i <= hdlv && i < 10; i++)
+                h = new Label[hdlv];
+                for (int i = 0; i < hdlv && i < 10; i++)
                 {
                     h[i] = new Label();
                     panel3.Controls.Add(h[i]);
@@ -178,13 +178,14 @@ namespace Cube_Flip
         }
         Button[,] a;
         int[,] v;
-        int x = 4;
+        int x=5;
         int total = 0;
 
 
         void generate(int x)
         {
             a = new Button[x, x];
+           // MessageBox.Show(Convert.ToString(x));
             int n = 701;
             for (int i = 0; i < x; i++, n += 524 / x)
                 for (int j = 0, m = 150; j < x; j++, m += 524 / x)
@@ -206,6 +207,7 @@ namespace Cube_Flip
         }
         private void button(object sender, EventArgs e)
         {
+            //MessageBox.Show(Convert.ToString(x));
             for (int i = 0; i < x; i++)
             {
                 for (int j = 0; j < x; j++)
@@ -303,7 +305,7 @@ namespace Cube_Flip
                     }
                 }
 
-                else
+                if(x==16)
                 {
                     if (curentuser.hardtime == -1)
                     {
@@ -327,8 +329,8 @@ namespace Cube_Flip
                         }
                     }
                 }
-                leaderboard(x == 4);
-                
+                leaderboard(x);
+
                 for (int i = 0; i < x; i++)
                     for (int j = 0; j < x; j++)
                     {
@@ -358,10 +360,10 @@ namespace Cube_Flip
 
                     }
                 }
-                if(watch.Elapsed.TotalMilliseconds < 1000)
+                if (watch.Elapsed.TotalMilliseconds < 1000)
                     label3.Text = (int)watch.Elapsed.TotalMilliseconds + " ms";
                 else
-                    label3.Text =  (float)((int)watch.Elapsed.TotalMilliseconds) / 1000.0 + " s";
+                    label3.Text = (float)((int)watch.Elapsed.TotalMilliseconds) / 1000.0 + " s";
                 label3.Visible = true;
                 watch.Reset();
                 pictureBox6.Size = new Size(1920, 1080);
@@ -383,6 +385,8 @@ namespace Cube_Flip
             hardbutton.Size = new Size(400, 500);
             hardbutton.Visible = true;
             easybutton.Visible = true;
+            label1.Visible = true;
+            label1.BringToFront();
             hardbutton.BringToFront();
             easybutton.BringToFront();
 
@@ -464,7 +468,7 @@ namespace Cube_Flip
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
-        { 
+        {
             loadingscreen.BringToFront();
             loadingscreen.Size = new Size(1920, 1080);
             loadingscreen.Visible = true;
@@ -472,12 +476,15 @@ namespace Cube_Flip
             easybutton.Visible = false;
             hardbutton.Visible = false;
             pictureBox2.Visible = false;
-           
+            label1.Visible = false;
+            textBox1.Visible = false;
+            button4.Visible = false;
+
             x = 4;
             v = new int[x, x];
             total = 0;
             generate(x);
-            
+
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -489,11 +496,46 @@ namespace Cube_Flip
             easybutton.Visible = false;
             hardbutton.Visible = false;
             pictureBox2.Visible = false;
+            label1.Visible = false;
+            textBox1.Visible = false;
+            button4.Visible = false;
             x = 16;
             v = new int[x, x];
             total = 0;
             generate(x);
-            
+
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+            textBox1.Visible = true;
+            textBox1.BringToFront();
+            button4.Visible = true;
+            button4.BringToFront();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < textBox1.Text.Length; i++)
+                if (textBox1.Text[i] < '0' || textBox1.Text[i] > '9')
+                    return;
+            x = int.Parse(textBox1.Text);
+            if (x > 0 && x <= 20)
+            {
+                loadingscreen.BringToFront();
+                loadingscreen.Size = new Size(1920, 1080);
+                loadingscreen.Visible = true;
+                button3.Visible = false;
+                easybutton.Visible = false;
+                hardbutton.Visible = false;
+                pictureBox2.Visible = false;
+                button4.Visible = false;
+                textBox1.Visible = false;
+                label1.Visible = false;
+                v = new int[x, x];
+                total = 0;
+                generate(x);
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -594,5 +636,7 @@ namespace Cube_Flip
         {
 
         }
+
+        
     }
 }
